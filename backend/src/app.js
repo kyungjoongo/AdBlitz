@@ -34,18 +34,19 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Connect DB & Start
+// Start server first, then connect DB (Railway healthcheck needs port open)
+const server = app.listen(config.port, () => {
+  console.log(`AdBlitz API running on port ${config.port}`);
+});
+
 mongoose
   .connect(config.mongodbUri)
   .then(() => {
     console.log('MongoDB connected');
-    app.listen(config.port, () => {
-      console.log(`AdBlitz API running on port ${config.port}`);
-    });
   })
   .catch((err) => {
-    console.error('MongoDB connection error:', err);
-    process.exit(1);
+    console.error('MongoDB connection error:', err.message);
+    console.error('MONGODB_URI:', config.mongodbUri ? '설정됨' : '미설정');
   });
 
 module.exports = app;
