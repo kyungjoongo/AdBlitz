@@ -35,8 +35,8 @@ app.use((err, req, res, next) => {
 });
 
 // Start server first, then connect DB (Railway healthcheck needs port open)
-const server = app.listen(config.port, () => {
-  console.log(`AdBlitz API running on port ${config.port}`);
+const server = app.listen(config.port, '0.0.0.0', () => {
+  console.log(`AdBlitz API running on 0.0.0.0:${config.port}`);
 });
 
 mongoose
