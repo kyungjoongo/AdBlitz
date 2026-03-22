@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "115033843651",
+    "project_id": "adbiz-c3344",
+    "storage_bucket": "adbiz-c3344.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115033843651:android:2942e1c371fac6640abf76",
+        "android_client_info": {
+          "package_name": "com.adblitz.adblitz_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg7L4UOyBY8ABwKA2iNlE43yJpb6cmmX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
